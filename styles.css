@@ -83,6 +83,9 @@ body {
   border-radius: 15px;
   background-color: white;
   text-align: center;
+  -webkit-box-shadow: 0px 24px 36px -4px rgba(56, 41, 224, 0.2);
+  -moz-box-shadow: 0px 24px 36px -4px rgba(56, 41, 224, 0.2);
+  box-shadow: 0px 24px 36px -4px rgba(56, 41, 224, 0.2);
 }
 
 .illustration {
