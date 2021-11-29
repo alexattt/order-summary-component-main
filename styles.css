@@ -1,0 +1,206 @@
+/***** some base definitions from https://piccalil.li/blog/a-modern-css-reset/ *****/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/***** defining colors etc. *****/
+
+:root {
+  --primary-paleblue: hsl(225, 100%, 94%);
+  --primary-brightblue: hsl(245, 75%, 52%);
+  --shadow-palepurple: hsl(245, 79%, 74%);
+  --neutral-paleblue: hsl(225, 100%, 98%);
+  --neutral-desatblue: hsl(224, 23%, 55%);
+  --neutral-darkblue: hsl(223, 47%, 23%);
+  --white: hsl(0, 0%, 100%);
+}
+
+
+/***** main styles *****/
+
+body {
+  font-size: 16px;
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 500;
+  color: var(--neutral-desatblue);
+  background-color: var(--primary-paleblue);
+  background-image: url("/images//pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.order-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.content-container {
+  width: 400px;
+  height: auto;
+  border-radius: 15px;
+  background-color: white;
+  text-align: center;
+}
+
+.illustration {
+  border-radius: 15px 15px 0 0;
+}
+
+.text-content-container {
+  padding: 40px;
+}
+
+.order-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--neutral-darkblue);
+  margin-bottom: 15px;
+}
+
+.plan-container {
+  justify-content: space-between;
+  background-color: var(--neutral-paleblue);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  vertical-align: center;
+  font-size: 14px;
+}
+
+.icon-music {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+.plan-price-container, .change-plan {
+  align-self: center;
+}
+
+.plan-title {
+  font-weight: 900;
+  color: var(--neutral-darkblue);
+  margin-bottom: 3px;
+}
+
+.change-plan {
+  font-weight: 700;
+  color: var(--primary-brightblue);
+  transition: color 0.2s ease;
+}
+
+.proceed-btn {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: white;
+  font-weight: 700;
+  background-color: var(--primary-brightblue);
+  box-shadow: 0px 10px 20px 5px rgba(56, 41, 224, 0.2);
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: background-color 0.2s ease;
+}
+
+.cancel-order {
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 14px;
+}
+
+.attribution a {
+  color: var(--primary-brightblue);
+}
+
+/*** hover effects ***/
+
+.change-plan:hover {
+  color: var(--shadow-palepurple);
+}
+
+.proceed-btn:hover {
+  background-color: var(--shadow-palepurple);
+}
+
+.cancel-order:hover {
+  color: var(--neutral-darkblue);
+}
+
+/*** mobile view ***/
+
+@media (max-width:375px) {
+  body {
+    font-size: 14px;
+  }
+
+  .content-container {
+    width: 90%;
+  }
+
+  .order-title {
+    font-size: 21px;
+  }
+}
+
+@media (max-width:320px) {
+  .plan-container {
+    flex-direction: column;
+  }
+}
